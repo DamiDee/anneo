@@ -5,13 +5,13 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/layout/CustomCursor";
 
 export const metadata: Metadata = {
-  title: "Anne Okolo — UI/UX & AI Engineer",
+  title: "Anne Okolo — UI/UX Designer & AI-augmented Product Design",
   description:
     "Anne Okolo crafts digital experiences where intuitive design meets machine intelligence — turning complexity into clarity.",
-  keywords: ["UI/UX Designer", "AI Engineer", "Product Designer", "UX Design", "Lagos", "Nigeria"],
+  keywords: ["UI/UX Designer", "AI-augmented Product Design", "Product Designer", "UX Design", "Lagos", "Nigeria"],
   authors: [{ name: "Anne Okolo" }],
   openGraph: {
-    title: "Anne Okolo — UI/UX & AI Engineer",
+    title: "Anne Okolo — UI/UX Designer & AI-augmented Product Design",
     description:
       "Designing the future, pixel by pixel. Anne Okolo bridges intuitive design and machine intelligence.",
     url: "https://anneokolo.com",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anne Okolo — UI/UX & AI Engineer",
+    title: "Anne Okolo — UI/UX Designer & AI-augmented Product Design",
     description: "Designing the future, pixel by pixel.",
     images: ["/images/og-image.png"],
   },
@@ -60,7 +60,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Anne Okolo",
-              jobTitle: "UI/UX Engineer & AI Engineer",
+              jobTitle: "UI/UX Designer & AI-augmented Product Design",
               url: "https://anneokolo.com",
               sameAs: [
                 "https://linkedin.com/in/anneokolo",

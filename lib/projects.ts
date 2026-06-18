@@ -20,6 +20,10 @@ export interface Project {
   problem: string;
   results: { value: string; label: string }[];
   tags: string[];
+  gallery?: string[];
+  prototypeUrl?: string;
+  prototypeUrls?: { label: string; url: string }[];
+  websiteUrl?: string;
 
   // Custom case study fields
   responsibilities?: string[];
@@ -45,7 +49,7 @@ export interface Project {
   finalSolution?: string;
   reflection?: string;
 
-  // StyleManger extra fields
+  // StyleManger/Bodify extra fields
   personas?: {
     name: string;
     traits: string[];
@@ -80,6 +84,8 @@ export const projects: Project[] = [
     featured: false,
     isAI: true,
     showArchitecture: false,
+    prototypeUrl: "https://www.figma.com/proto/3SiWr2wp0L3QDSiQmxgRvw/FundusAI?node-id=555-244&viewport=-221%2C2732%2C0.07&t=Pv7TEMpPgKW3ASfp-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=555%3A244&page-id=47%3A439",
+    websiteUrl: "https://www.fundusai.com/",
     overview:
       "FundusAI is an AI-powered platform focused on helping users simplify access to intelligent financial and business insights through a modern digital experience.\n\nThis project focused on designing a clean, trustworthy, and conversion-focused product website that communicates innovation while remaining intuitive and accessible to users.\n\nThe goal was to create a modern AI product experience that balances clarity, usability, and visual sophistication.",
     role: "UI/UX Designer",
@@ -168,107 +174,118 @@ export const projects: Project[] = [
     reflection: "This project reinforced the importance of clarity in AI product design.\n\nOne major takeaway was learning how strategic hierarchy and content simplification can dramatically improve how users perceive and understand complex products.\n\nIt also strengthened my ability to design for AI/SaaS products, improve conversion-focused experiences, simplify information architecture, balance modern aesthetics with usability, and create scalable responsive layouts."
   },
   {
-    slug: "handyman",
-    title: "HandyMan",
-    tagline: "Expert help, just a tap away — connecting services to communities",
-    type: "UX Design · Mobile",
-    industry: "Services Marketplace",
+    slug: "lova-ai",
+    title: "Lova AI",
+    tagline: "An AI-Powered Relationship Companion for Couples",
+    type: "UX Design · Product",
+    industry: "Lifestyle / AI",
     year: "2024",
-    accentColor: "#3DFFE0",
-    thumbnail: "/images/handyman.png",
-    featured: false,
-    isAI: false,
-    overview:
-      "HandyMan is a mobile marketplace connecting users with verified home service providers — from plumbing to carpentry. Designed for speed of trust: every interaction builds confidence between client and professional.",
-    role: "Lead UX Designer",
-    team: "Solo Design, 3 Engineers",
-    timeline: "8 weeks",
-    tools: ["Figma", "Framer", "Principle"],
-    platform: "iOS · Android",
-    status: "Shipped",
-    problem:
-      "Unverified service providers, zero price transparency, and no accountability created a trust crisis in Nigeria's home services market. Users needed confidence before opening their doors.",
-    results: [
-      { value: "+47%", label: "Task completion rate" },
-      { value: "4.8★", label: "App Store rating" },
-      { value: "2.1×", label: "Faster booking flow" },
-      { value: "92%", label: "Trust score (post-survey)" },
-    ],
-    tags: ["Mobile", "Marketplace", "UX Research", "Design Systems"],
-  },
-  {
-    slug: "ubloom",
-    title: "Ubloom",
-    tagline: "Beauty & wellness marketplace connecting clients and professionals",
-    type: "UX Design · Mobile",
-    industry: "Beauty / Wellness",
-    year: "2023",
     accentColor: "#FF6B6B",
-    thumbnail: "/images/ubloom.png",
-    featured: false,
-    isAI: false,
-    overview:
-      "Ubloom is a beauty services platform designed to help African beauty professionals attract clients while giving users an intuitive discovery experience for make-up, hair, facials, and more.",
-    role: "UX Designer",
-    team: "Solo, 2 Engineers",
-    timeline: "10 weeks",
-    tools: ["Figma", "Maze (usability testing)", "Notion"],
-    platform: "iOS · Android",
-    status: "Shipped",
-    problem:
-      "Beauty professionals in Nigeria relied on fragmented WhatsApp marketing and word-of-mouth. There was no polished discovery experience that matched the quality of their craft.",
-    results: [
-      { value: "+38%", label: "Booking conversion rate" },
-      { value: "4.6★", label: "User rating" },
-      { value: "60%", label: "Reduction in no-shows" },
-      { value: "1.8×", label: "Professional earnings uplift" },
-    ],
-    tags: ["Mobile", "Marketplace", "Accessibility", "Interaction Design"],
-  },
-  {
-    slug: "echomind-ai",
-    title: "EchoMind AI",
-    tagline: "LLM-powered journaling assistant that listens and reflects",
-    type: "AI Engineering · Product",
-    industry: "Productivity",
-    year: "2024",
-    accentColor: "#F5C97A",
-    thumbnail: "/images/echomind.png",
+    thumbnail: "/images/lova1.PNG",
     featured: true,
     isAI: true,
-    showArchitecture: true,
+    prototypeUrl: "https://www.figma.com/proto/iTQHtxOyrsIRli284aQirw/Tandem-%E2%80%94-iPhone-Screens-v1?node-id=73-23&t=vAyOG7SRmuHn1Le4-1&scaling=scale-down&content-scaling=fixed&page-id=73%3A2&starting-point-node-id=73%3A23",
     overview:
-      "EchoMind is a conversational journaling app powered by a custom GPT-4 layer. It doesn't just store thoughts — it mirrors them back with empathy, asks probing questions, and surfaces patterns over time.",
-    role: "AI Engineer + Product Designer",
-    team: "Solo",
-    timeline: "6 weeks",
-    tools: ["Python", "OpenAI API", "LangChain", "React Native", "Figma"],
-    platform: "iOS · Android",
-    status: "Live",
+      "Lova AI is a mobile application designed to help couples build stronger, healthier, and more intentional relationships by leveraging the principles of the Five Love Languages and the power of artificial intelligence.\n\nThe app delivers personalized daily challenges, thoughtful relationship activities, interactive games, and meaningful conversation prompts tailored to each couple’s unique dynamic. As users engage with the app and provide feedback, its AI continuously learns their preferences and refines future recommendations, creating a deeply personalized experience that evolves alongside the relationship.",
+    role: "UX Researcher + UX Designer + UI Designer",
+    team: "Solo Design",
+    timeline: "3 weeks",
+    tools: ["Figma"],
+    platform: "Mobile App (iOS & Android)",
+    status: "Completed",
     problem:
-      "Traditional journaling apps are passive storage. People want reflection, not just record-keeping. Most AI tools felt clinical — not emotionally intelligent.",
-    results: [
-      { value: "3.2×", label: "Journaling frequency increase" },
-      { value: "94%", label: "Felt 'understood' by AI" },
-      { value: "<600ms", label: "AI response latency p95" },
-      { value: "4.9★", label: "Emotional resonance score" },
+      "Many couples genuinely want to nurture their relationships but often struggle to do so consistently. Busy schedules, routine, and differing communication styles can cause partners to drift apart despite having good intentions.\n\nWhile many relationship apps focus on messaging or tracking anniversaries, few provide actionable, personalized guidance that encourages couples to intentionally invest in their relationship every day.\n\nThe challenge was to design a solution that makes expressing love simple, engaging, and sustainable.",
+    results: [],
+    tags: ["UX Research", "UI Design", "Information Architecture", "Mobile Design", "Relationship Psychology"],
+    responsibilities: ["UX Research", "UI/UX Design", "Wireframing", "Prototyping"],
+    challengeDetails: {
+      description: "Couples need an easy and engaging way to consistently nurture their relationships because everyday responsibilities often reduce intentional expressions of love, resulting in routine and emotional distance.",
+      points: [
+        "Busy schedules leaving little time for intentional connection",
+        "Running out of creative date or appreciation ideas",
+        "Misunderstandings due to different love languages",
+        "Forgetting to consistently show appreciation"
+      ],
+      objectives: [
+        "Discover and understand each other’s love languages",
+        "Build healthy relationship habits through daily activities",
+        "Receive AI-powered personalized recommendations",
+        "Improve emotional intimacy through fun challenges and games",
+        "Track relationship growth over time",
+        "Strengthen communication through consistent intentional actions"
+      ]
+    },
+    goal: "Design an intelligent relationship platform that helps couples build healthy habits, engage in personalized relationship activities, track emotional growth over time, and consistently express affection in meaningful ways.",
+    insights: [
+      {
+        title: "1. Small Acts, Large Impact",
+        observation: "Small daily acts of love often have a greater long-term impact than occasional grand gestures.",
+        decision: "I designed the app around quick, actionable 'Daily Love Challenges' that take less than 20 minutes to complete."
+      },
+      {
+        title: "2. Personalization is Essential",
+        observation: "Generic relationship advice fails because every couple has a unique dynamic and different communication styles.",
+        decision: "I designed an onboarding questionnaire to gather shared interests, love languages, and relationship goals to guide the AI recommendation engine."
+      },
+      {
+        title: "3. Gamification Drives Consistency",
+        observation: "Couples start with good intentions but lose consistency when relationship building feels like a chore.",
+        decision: "I incorporated streaks, trivia, milestone celebration widgets, and shared reflection sessions into the dashboard."
+      }
     ],
-    tags: ["AI/ML", "LLM", "Product Design", "Prompt Engineering"],
+    process: [
+      {
+        title: "UX Research & Interviews",
+        description: "Conducted interviews with couples in committed relationships to understand friction points, date-planning habits, and emotional connection dynamics."
+      },
+      {
+        title: "Information Architecture & Flows",
+        description: "Mapped out onboarding flows, daily challenge loops, game lobbies, and progress tracking to create a low-friction daily ritual."
+      },
+      {
+        title: "UI Design & Prototyping",
+        description: "Designed a warm, emotional interface in Figma utilizing soft lighting details, comfortable curves, and friendly typography to build emotional trust."
+      }
+    ],
+    improvements: {
+      before: [
+        "Repetitive, routine interactions",
+        "Struggle to plan date ideas or conversation starters",
+        "Unexpressed appreciation due to busy schedules",
+        "Fragmented or missing relationship habits"
+      ],
+      after: [
+        "Dynamic, personalized daily challenges",
+        "Curated relationship games & conversation cards",
+        "Streaks and metrics honoring consistent progress",
+        "Sustainable relationship habits fueled by AI learning"
+      ]
+    },
+    finalSolution: "The final solution is an intelligent companion that guides couples to intentionally connect daily. By analyzing feedback, the AI continuously refines challenges to match what makes each partner feel loved, fostering deep and sustainable intimacy.",
+    reflection: "Designing Lova AI highlighted the importance of balancing technology with authentic human connection. The objective was never to replace emotional effort with AI but to use intelligent technology as a guide that inspires genuine interactions.",
+    gallery: [
+      "/images/lova1.PNG",
+      "/images/lova2.PNG",
+      "/images/lova3.PNG",
+      "/images/lova4.PNG",
+      "/images/lova5.PNG"
+    ]
   },
   {
     slug: "stylemanger",
-    title: "StyleManger",
+    title: "StyleManager",
     tagline: "AI Digital Closet & Social Styling App",
     type: "UX Design · AI · Mobile App",
     industry: "Fashion / Lifestyle",
     year: "2024",
     accentColor: "#FF6B8B",
-    thumbnail: "/images/stylemanger.jpg",
+    thumbnail: "/images/stylemanager1.PNG",
     featured: false,
     isAI: true,
     showArchitecture: false,
+    prototypeUrl: "https://www.figma.com/proto/Zo8WvW5shTqgkJDQfDJ9nX/Dappa?node-id=2-8&t=dSdGdkoHyJpJZb2s-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A8&show-proto-sidebar=1",
     overview:
-      "StyleManger is an AI-powered digital closet that helps users digitize their wardrobe, receive outfit suggestions based on weather and context, preview outfits on a virtual avatar, connect with friends, and participate in influencer-led styling challenges.\n\nThe goal of this project was to design a comprehensive mobile experience that reduces outfit decision-making stress, increases wardrobe utilization, and blends personal utility with social engagement.",
+      "StyleManager is an AI-powered digital closet that helps users digitize their wardrobe, receive outfit suggestions based on weather and context, preview outfits on a virtual avatar, connect with friends, and participate in influencer-led styling challenges.\n\nThe goal of this project was to design a comprehensive mobile experience that reduces outfit decision-making stress, increases wardrobe utilization, and blends personal utility with social engagement.",
     role: "UI/UX Designer",
     team: "Solo (Visual & UX)",
     timeline: "2–3 weeks",
@@ -349,8 +366,8 @@ export const projects: Project[] = [
         "A creator-driven styling ecosystem"
       ]
     },
-    finalSolution: "The final solution transforms StyleManger from a simple organizer into a habit-forming social styling assistant that delivers styling confidence, enables closet management, and fosters community engagement.",
-    reflection: "This project reinforced the importance of blending utility with social features in product design.\n\nDeveloping StyleManger deepened my experience in styling applications, gamified engagement, and AI-driven personalization, highlighting how simple layouts can communicate complex AI services gracefully.",
+    finalSolution: "The final solution transforms StyleManager from a simple organizer into a habit-forming social styling assistant that delivers styling confidence, enables closet management, and fosters community engagement.",
+    reflection: "This project reinforced the importance of blending utility with social features in product design.\n\nDeveloping StyleManager deepened my experience in styling applications, gamified engagement, and AI-driven personalization, highlighting how simple layouts can communicate complex AI services gracefully.",
     personas: [
       {
         name: "Busy Professional",
@@ -415,7 +432,13 @@ export const projects: Project[] = [
       "Smart calendar outfit planning",
       "Style memory and outfit history suggestions"
     ],
-    closingStatement: "StyleManger transforms fashion interaction from:\n\n“What should I wear?” → “Here is your best look today.”"
+    closingStatement: "StyleManager transforms fashion interaction from:\n\n“What should I wear?” → “Here is your best look today.”",
+    gallery: [
+      "/images/stylemanager1.PNG",
+      "/images/stylemanager2.PNG",
+      "/images/stylemanager3.PNG",
+      "/images/stylemanager4.PNG"
+    ]
   },
   {
     slug: "intellisearch",
@@ -443,9 +466,9 @@ export const projects: Project[] = [
       { value: "78%", label: "Reduction in search time" },
       { value: "<800ms", label: "Query response p95" },
       { value: "4.5×", label: "Knowledge retrieval accuracy" },
-      { value: "96%", label: "Analyst satisfaction" },
+      { value: "96%", label: "Analyst satisfaction" }
     ],
-    tags: ["RAG", "LLM", "Enterprise AI", "Search"],
+    tags: ["RAG", "LLM", "Enterprise AI", "Search"]
   },
   {
     slug: "epharma4fp",
@@ -455,10 +478,14 @@ export const projects: Project[] = [
     industry: "HealthTech",
     year: "2024",
     accentColor: "#3DFFE0",
-    thumbnail: "/images/epharma4fp.jpg",
+    thumbnail: "/images/epharma1.PNG",
     featured: false,
     isAI: false,
     showArchitecture: false,
+    prototypeUrls: [
+      { label: "View Mobile Prototype", url: "https://www.figma.com/proto/jBSFYqyWrONxuzutHrrYpO/Epharma4FP?node-id=342-1200&viewport=-106%2C125%2C0.36&t=E4bqqrSs8HBSaeer-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=451%3A3796&page-id=317%3A12664" },
+      { label: "View Website Prototype", url: "https://www.figma.com/proto/jBSFYqyWrONxuzutHrrYpO/Epharma4FP?node-id=96-243&viewport=34%2C296%2C0.06&t=SrPd9o97Sgs55c47-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=96%3A243&page-id=96%3A242" }
+    ],
     overview:
       "ePharma4FP is a digital healthcare platform designed to improve access to family planning information and services across both web and mobile experiences. The existing product ecosystem had usability and navigation challenges that made task completion difficult for users.\n\nThis redesign focused on simplifying navigation, improving usability, reducing cognitive load, and creating a more intuitive and consistent experience across the website and mobile app.",
     role: "UI/UX Designer",
@@ -555,7 +582,159 @@ export const projects: Project[] = [
       ]
     },
     finalSolution: "The redesigned website and mobile app focused on helping users navigate faster, understand information more easily, discover family planning methods efficiently, and interact with the platform confidently.\n\nThe final solution introduced a more scalable and user-friendly design system while maintaining the platform’s healthcare identity across all touchpoints.",
-    reflection: "This project reinforced the importance of balancing usability with information density in healthcare products.\n\nOne of the biggest lessons was learning how consistency across platforms can significantly improve user trust and usability.\n\nIt also strengthened my ability to conduct UX audits, simplify complex flows, design responsive experiences, improve accessibility, and create structured digital healthcare products."
+    reflection: "This project reinforced the importance of balancing usability with information density in healthcare products.\n\nOne of the biggest lessons was learning how consistency across platforms can significantly improve user trust and usability.\n\nIt also strengthened my ability to conduct UX audits, simplify complex flows, design responsive experiences, improve accessibility, and create structured digital healthcare products.",
+    gallery: [
+      "/images/epharma1.PNG",
+      "/images/epharma2.PNG",
+      "/images/epharma3.PNG"
+    ]
+  },
+  {
+    slug: "bodify",
+    title: "Bodify",
+    tagline: "AI Body & Face Enhancer App UX Case Study",
+    type: "UX Design · AI · Mobile App",
+    industry: "Lifestyle / AI",
+    year: "2024",
+    accentColor: "#FF2A6D",
+    thumbnail: "/images/bodify1.PNG",
+    featured: false,
+    isAI: true,
+    showArchitecture: false,
+    overview:
+      "Bodify is an AI-powered body and face enhancement application designed to help users naturally refine their photos, adjust body posture, and smooth facial features through advanced computer vision.\n\nThe goal of this project was to design a comprehensive mobile editing studio that balances powerful AI adjustments with realistic, non-distorted outcomes, addressing the ethical and aesthetic concerns of modern photo editing.",
+    role: "UI/UX Designer",
+    team: "Solo (Visual & UX)",
+    timeline: "2–3 weeks",
+    tools: ["Figma"],
+    platform: "Mobile App (iOS & Android)",
+    status: "Completed",
+    problem:
+      "Users struggle with complex, manual adjustments in traditional editing apps, which often lead to unrealistic distortions, visible warp marks on backgrounds, and a steep learning curve for everyday users.",
+    results: [],
+    tags: ["UI/UX Design", "Product Strategy", "Information Architecture", "Mobile Design", "Interaction Design"],
+    responsibilities: [
+      "User research & persona development",
+      "Information architecture",
+      "Wireframing and user flows",
+      "Interaction design",
+      "Visual design direction",
+      "Usability insight synthesis"
+    ],
+    challengeDetails: {
+      description: "AI body and face enhancement tools must balance powerful modification capabilities with natural, distortion-free outputs that maintain user trust and editing authenticity.",
+      points: [
+        "Unnatural distortion of background grids and lines during reshaping",
+        "Overwhelming number of sliders and adjustment categories",
+        "Ethical concerns regarding extreme body alteration vs. natural enhancements",
+        "High processing time and lack of real-time adjustment preview"
+      ],
+      objectives: [
+        "Deliver natural, non-distorted body and face adjustments",
+        "Simplify the editing interface with context-aware controls",
+        "Promote realistic body standards through intelligent presets",
+        "Provide instantaneous visual feedback and side-by-side comparison",
+        "Create a seamless and non-destructive export workflow"
+      ]
+    },
+    goal: "The primary goal was to design an intuitive mobile experience that simplifies photo editing, prevents background warping, and makes AI enhancement feel organic and accessible to non-professionals.",
+    insights: [
+      {
+        title: "1. The Distortion Fear",
+        observation: "Users hate when the background (e.g., floor patterns, walls) warps visibly when using body-slimming tools.",
+        decision: "I designed a smart background-isolation feature that locks the background grid while only applying edits to the subject."
+      },
+      {
+        title: "2. Slider Fatigue",
+        observation: "Having 30 different sliders for body and face features causes decision paralysis for users who just want a quick touch-up.",
+        decision: "I grouped adjustments into context-aware tabs: Face, Body, and Presets, with single-slider AI-driven automatic corrections."
+      },
+      {
+        title: "3. Destructive Editing Anxiety",
+        observation: "Users are hesitant to make extensive changes if they cannot easily backtrack or compare with the original photo.",
+        decision: "I designed a persistent 'Original Compare' tap button and a non-destructive layers panel."
+      }
+    ],
+    process: [
+      {
+        title: "Information Architecture",
+        description: "Mapped out image uploading, camera capture, category selection (Face vs. Body), AI adjustment sliders, and one-tap preset menus."
+      },
+      {
+        title: "Wireframing",
+        description: "Created wireframes of the main camera view, editor workspace (featuring tool tabs and sliders), before-and-after comparison slider view, and export options."
+      },
+      {
+        title: "Visual Direction",
+        description: "Opted for a dark, sleek UI layout with magenta/pink accents. Neutral tones keep the user focused entirely on their photo while sliders feel organic and tactile."
+      }
+    ],
+    improvements: {
+      before: [
+        "Visible background warping",
+        "Cluttered and overwhelming slider lists",
+        "Difficult comparisons with the original photo",
+        "Complex export steps"
+      ],
+      after: [
+        "Background-locked smart contouring",
+        "Simplified categories and one-tap presets",
+        "Instant slider compare and split-screen mode",
+        "One-click high-res export and sharing"
+      ]
+    },
+    finalSolution: "The final solution is a premium editing interface that empowers users to confidently edit photos without technical friction, ensuring all edits look natural and realistic.",
+    reflection: "This project demonstrated the value of simplification in tool-based design. By designing around the user's focus—the photo itself—and reducing secondary interface clutter, I created an experience that feels empowering and effortless.",
+    personas: [
+      {
+        name: "Casual Social Poster",
+        traits: [
+          "Needs quick, natural adjustments",
+          "Post photos directly to social media",
+          "Prefers one-tap automatic presets"
+        ]
+      },
+      {
+        name: "Content Creator",
+        traits: [
+          "Demands precise control over details",
+          "Edits large batches of photos",
+          "Focuses on background integrity"
+        ]
+      }
+    ],
+    userFlows: [
+      {
+        title: "Photo Editing Flow",
+        steps: ["Upload image", "Select enhancement area (Face/Body)", "Adjust slider intensity", "Compare with original", "Export to camera roll"]
+      },
+      {
+        title: "Preset Flow",
+        steps: ["Open editor", "Tap 'Presets'", "Choose filter (e.g., Natural Glow)", "Adjust overall intensity", "Save & share"]
+      }
+    ],
+    showWireframes: true,
+    uxPrinciples: [
+      { title: "Non-destructive flow", desc: "Allows users to toggle individual edits on/off at any point without losing progress." },
+      { title: "Contextual sliders", desc: "Sliders adjust their labels and ranges dynamically based on the selected feature." },
+      { title: "Natural boundaries", desc: "The AI prevents resizing beyond realistic anatomical limits to support authenticity." },
+      { title: "Visual feedback", desc: "Before/after comparison is always one tap away from any editing screen." }
+    ],
+    uiDirection: [
+      { title: "Editor-Centric Layout", desc: "A dark canvas that makes colors and details of the edited photo stand out." },
+      { title: "Tactile Sliders", desc: "Large touch targets and smooth dragging gestures for fine-grained slider adjustments." }
+    ],
+    futureImprovements: [
+      "AI video face and body tracking support",
+      "Custom preset creation based on user's history",
+      "Interactive tutorial overlays for advanced tools"
+    ],
+    closingStatement: "Bodify simplifies photo enhancement from:\n\n“Complex manual warping” → “Perfect, organic edits in seconds.”",
+    gallery: [
+      "/images/bodify1.PNG",
+      "/images/bodify2.PNG",
+      "/images/bodify3.PNG"
+    ]
   }
 ];
 
@@ -567,6 +746,6 @@ export function getAdjacentProjects(slug: string): { prev?: Project; next?: Proj
   const idx = projects.findIndex((p) => p.slug === slug);
   return {
     prev: idx > 0 ? projects[idx - 1] : projects[projects.length - 1],
-    next: idx < projects.length - 1 ? projects[idx + 1] : projects[0],
+    next: idx < projects.length - 1 ? projects[idx + 1] : projects[0]
   };
 }

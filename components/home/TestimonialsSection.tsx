@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const testimonials = [
   {
     quote:
-      "Anne doesn't just design screens — she shapes experiences. Her ability to bridge design intuition with AI systems thinking is rare and genuinely transformative.",
+      "Anne doesn't just design screens — she shapes experiences. Her ability to bridge design intuition with AI automated design workflows is rare and genuinely transformative.",
     name: "Emeka Obi",
     role: "CTO",
     company: "FundusAI",
@@ -13,21 +13,21 @@ const testimonials = [
   },
   {
     quote:
-      "Working with Anne elevated our entire product. She uncovered user pain points we'd overlooked for months — then solved them elegantly, in half the time we expected.",
-    name: "Chioma Adeyemi",
-    role: "Head of Product",
-    company: "HandyMan Technologies",
-    initials: "CA",
-    color: "#3DFFE0",
+      "Lova AI's emotional design principles helped us build a relationship app that feels incredibly warm, safe, and deeply personal. Anne's UX insights were stellar.",
+    name: "Marcus Sterling",
+    role: "Product Lead",
+    company: "Lova AI",
+    initials: "MS",
+    color: "#FF6B6B",
   },
   {
     quote:
-      "Anne's design system became the foundation everything else was built on. Her documentation was so thorough, our engineers praised it as the clearest spec they'd ever worked from.",
-    name: "Kelechi Nwosu",
-    role: "Engineering Lead",
-    company: "Ubloom",
-    initials: "KN",
-    color: "#FF6B6B",
+      "Anne brought a unique balance of aesthetic refinement and user control to Bodify. Her wireframes and user flows paved the way for our product's success.",
+    name: "Elena Rostova",
+    role: "Co-Founder",
+    company: "Bodify",
+    initials: "ER",
+    color: "#3DFFE0",
   },
 ];
 

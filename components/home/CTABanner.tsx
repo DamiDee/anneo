@@ -54,9 +54,9 @@ export default function CTABanner() {
       {/* Content */}
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="font-display text-h1 sm:text-display-l font-semibold text-text-primary mb-6 leading-tight">
-          Let&apos;s build something
+          Let&apos;s build something together
           <br />
-          <span className="gradient-text-coral-gold">the world hasn&apos;t seen yet.</span>
+          <span className="gradient-text-coral-gold">and make your product impossible to ignore.</span>
         </h2>
         <p className="text-body-l text-text-secondary mb-12 max-w-lg mx-auto">
           Available for full-time roles, freelance projects, and AI consulting.
@@ -64,7 +64,7 @@ export default function CTABanner() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
-            href="mailto:hello@anneokolo.com"
+            href="mailto:anneookolo@gmail.com"
             id="cta-contact-btn"
             className="group inline-flex items-center gap-3 px-10 py-5 rounded-full text-lg font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-coral"
             style={{ background: "linear-gradient(135deg, #FF6B6B, #F5C97A)" }}

@@ -37,7 +37,7 @@ const socials = [
   { href: "https://github.com/anneokolo", Icon: GithubIcon, label: "GitHub" },
   { href: "https://dribbble.com/anneokolo", Icon: Palette, label: "Dribbble" },
   { href: "https://twitter.com/anneokolo", Icon: TwitterIcon, label: "Twitter/X" },
-  { href: "mailto:hello@anneokolo.com", Icon: Mail, label: "Email" },
+  { href: "mailto:anneookolo@gmail.com", Icon: Mail, label: "Email" },
 ];
 
 export default function Footer() {
@@ -57,7 +57,7 @@ export default function Footer() {
               <span className="gradient-text-violet-mint">AO</span>
             </div>
             <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
-              Designing the future, pixel by pixel. Where intuitive design meets machine intelligence.
+              Turning complex digital products into simple and intuitive experiences
             </p>
           </div>
 

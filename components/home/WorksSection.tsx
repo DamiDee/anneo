@@ -138,7 +138,7 @@ function ProjectCard({
 }
 
 export default function WorksSection() {
-  const [p0, p1, p2, p3, p4, p5, p6] = projects;
+  const [p0, p1, p2, p3, p4, p5] = projects;
 
   return (
     <section id="work" className="py-24 px-6 max-w-7xl mx-auto" aria-label="Selected works">
@@ -170,19 +170,16 @@ export default function WorksSection() {
         <div className="md:col-span-1">
           <ProjectCard project={p2} />
         </div>
-        <div className="md:col-span-1">
-          <ProjectCard project={p3} />
-        </div>
-        <div className="md:col-span-1">
-          <ProjectCard project={p4} />
+        <div className="md:col-span-2">
+          <ProjectCard project={p3} wide />
         </div>
 
         {/* Row 3 */}
+        <div className="md:col-span-2">
+          <ProjectCard project={p4} wide />
+        </div>
         <div className="md:col-span-1">
           <ProjectCard project={p5} />
-        </div>
-        <div className="md:col-span-2">
-          <ProjectCard project={p6} wide />
         </div>
       </div>
     </section>

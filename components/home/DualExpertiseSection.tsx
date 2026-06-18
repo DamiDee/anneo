@@ -11,12 +11,12 @@ const uxCapabilities = [
 ];
 
 const aiCapabilities = [
-  "LLM Integration (GPT-4, Claude, Gemini)",
-  "RAG Systems with FAISS / Pinecone",
-  "Prompt Engineering & Fine-tuning",
-  "Python, LangChain, OpenAI API",
-  "AI Product Strategy & UX",
-  "Latency optimization (<800ms p95)",
+  "AI-driven design workflows (Claude, Midjourney)",
+  "Automated wireframe generation (Google Stitch)",
+  "Dynamic mood boarding & style matching (MoodAI)",
+  "AI product strategy & user experience",
+  "Generative AI prototyping & UI variants",
+  "Intelligent personalization & contextual interfaces",
 ];
 
 export default function DualExpertiseSection() {
@@ -123,11 +123,10 @@ export default function DualExpertiseSection() {
               </svg>
             </div>
             <h3 className="font-display text-h2 font-semibold text-text-primary mb-3">
-              Machine Intelligence
+              AI-Augmented Design
             </h3>
             <p className="text-text-secondary text-body leading-relaxed mb-8">
-              I don&apos;t just design AI products — I build them. From architecting RAG pipelines to optimizing 
-              LLM response quality, I bridge the gap between model capabilities and user-facing experience.
+              I leverage artificial intelligence to accelerate and refine the design process. By integrating tools like MoodAI, Google Stitch, and Claude, I automate repetitive design workflows, generate dynamic variations, and focus on solving high-level user experience challenges.
             </p>
             <ul className="flex flex-col gap-3">
               {aiCapabilities.map((item) => (

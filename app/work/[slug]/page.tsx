@@ -96,6 +96,47 @@ export default async function CaseStudyPage({ params }: Props) {
                   </div>
                 ))}
               </div>
+
+              {/* Unified Project Links */}
+              {(project.websiteUrl || project.prototypeUrl || project.prototypeUrls) && (
+                <div className="mt-8 flex flex-wrap gap-4">
+                  {project.websiteUrl && (
+                    <a
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-mint"
+                      style={{ background: "linear-gradient(135deg, #7C6AF7, #3DFFE0)" }}
+                    >
+                      View Live Website ↗
+                    </a>
+                  )}
+                  {project.prototypeUrl && (
+                    <a
+                      href={project.prototypeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-coral"
+                      style={{ background: "linear-gradient(135deg, #FF6B6B, #F5C97A)" }}
+                    >
+                      View Figma Prototype ↗
+                    </a>
+                  )}
+                  {project.prototypeUrls &&
+                    project.prototypeUrls.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-coral"
+                        style={{ background: "linear-gradient(135deg, #FF6B6B, #F5C97A)" }}
+                      >
+                        {link.label} ↗
+                      </a>
+                    ))}
+                </div>
+              )}
             </div>
 
             {/* Right — Hero image */}
@@ -110,6 +151,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   alt={`${project.title} screenshot`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </div>
@@ -363,6 +405,29 @@ export default async function CaseStudyPage({ params }: Props) {
         </section>
       )}
 
+      {/* Final Design Showcase */}
+      {project.gallery && project.gallery.length > 0 && (
+        <section className="py-20 px-6" aria-label="Final design showcase">
+          <div className="max-w-7xl mx-auto">
+            <p className="font-caption text-caption text-text-muted uppercase tracking-widest mb-12">Final Design Showcase</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {project.gallery.map((img, index) => (
+                <div key={index} className="relative rounded-2xl overflow-hidden border border-white/10 aspect-[9/16] bg-black/20 hover:scale-[1.02] transition-transform duration-300">
+                  <Image
+                    src={img}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Results */}
       {project.results && project.results.length > 0 && (
         <section className="py-20 px-6" aria-label="Project results and impact">
@@ -471,141 +536,281 @@ export default async function CaseStudyPage({ params }: Props) {
         </section>
       )}
 
-      {/* Wireframe Overview (StyleManger specific) */}
+      {/* Wireframe Overview (StyleManager/Bodify specific) */}
       {project.showWireframes && (
         <section className="py-20 px-6" aria-label="Wireframe overview">
           <div className="max-w-7xl mx-auto">
             <p className="font-caption text-caption text-text-muted uppercase tracking-widest mb-12">Wireframe Overview</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              
-              {/* Home (AI Outfit Feed) */}
-              <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
-                <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
-                  <span className="text-[10px] font-mono text-text-muted">72°F Sunny</span>
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-                </div>
-                {/* Outfit Suggestion card */}
-                <div className="w-full flex-1 rounded-2xl border border-dashed border-white/10 bg-white/[0.01] flex flex-col items-center justify-center p-4 relative mb-4">
-                  <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-3 text-text-muted text-xs">✨</div>
-                  <div className="w-20 h-2 bg-white/10 rounded mb-2" />
-                  <div className="w-16 h-1.5 bg-white/5 rounded" />
-                </div>
-                {/* CTA buttons */}
-                <div className="w-full space-y-2">
-                  <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Wear Today</div>
-                  <div className="w-full h-9 rounded-xl border border-white/5 flex items-center justify-center text-[10px] text-text-secondary">Try on Avatar</div>
-                </div>
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-                </div>
-                <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Home (AI Outfit Feed)</div>
-              </div>
-
-              {/* Closet (Wardrobe Grid) */}
-              <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
-                <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
-                  <span className="text-[10px] font-mono text-text-muted">My Closet</span>
-                  <span className="text-[10px] text-accent-mint">+ Add</span>
-                </div>
-                {/* Tabs */}
-                <div className="w-full flex gap-1.5 mb-3">
-                  <div className="flex-1 h-5 rounded bg-white/10 flex items-center justify-center text-[8px] font-medium">All</div>
-                  <div className="flex-1 h-5 rounded border border-white/5 flex items-center justify-center text-[8px] text-text-muted">Tops</div>
-                  <div className="flex-1 h-5 rounded border border-white/5 flex items-center justify-center text-[8px] text-text-muted">Bottoms</div>
-                </div>
-                {/* Grid */}
-                <div className="w-full flex-1 grid grid-cols-2 gap-2 mb-4">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="rounded-xl border border-dashed border-white/10 bg-white/[0.01] flex items-center justify-center">
-                      <div className="w-6 h-6 rounded bg-white/5" />
+            {project.slug === "bodify" ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                
+                {/* Upload (Capture Studio) */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">Camera Mode</span>
+                    <div className="w-2.5 h-2.5 rounded-full bg-accent-violet" />
+                  </div>
+                  <div className="w-full flex-1 rounded-2xl border border-dashed border-white/10 bg-white/[0.01] flex flex-col items-center justify-center p-4 relative mb-4">
+                    <div className="absolute inset-2 border border-white/5 rounded-lg flex items-center justify-center">
+                      <div className="absolute inset-x-0 h-px bg-white/5 top-1/3" />
+                      <div className="absolute inset-x-0 h-px bg-white/5 top-2/3" />
+                      <div className="absolute inset-y-0 w-px bg-white/5 left-1/3" />
+                      <div className="absolute inset-y-0 w-px bg-white/5 left-2/3" />
+                      <div className="text-[24px] text-text-muted/40">📷</div>
                     </div>
-                  ))}
+                  </div>
+                  <div className="w-full space-y-2">
+                    <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Take Photo</div>
+                    <div className="w-full h-9 rounded-xl border border-white/5 flex items-center justify-center text-[10px] text-text-secondary">Upload from Gallery</div>
+                  </div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Upload (Capture Studio)</div>
                 </div>
-                <div className="w-full h-9 rounded-xl bg-white/5 flex items-center justify-center text-[10px] text-text-secondary">Scan Wardrobe</div>
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-                </div>
-                <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Closet (Wardrobe Grid)</div>
-              </div>
 
-              {/* Try-On (Avatar Screen) */}
-              <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
-                <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
-                  <span className="text-[10px] font-mono text-text-muted">Avatar Studio</span>
-                  <div className="w-3 h-3 rounded bg-white/10" />
-                </div>
-                {/* Avatar Silhouette */}
-                <div className="w-full flex-1 flex items-center justify-center relative mb-4">
-                  <div className="w-14 h-32 rounded-full border border-dashed border-white/20 flex flex-col items-center justify-start pt-3">
-                    <div className="w-5 h-5 rounded-full bg-white/10 mb-2" />
-                    <div className="w-8 h-16 bg-white/5 rounded-full" />
+                {/* AI Editor (Touch-Up) */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">AI Editor</span>
+                    <span className="text-[10px] text-accent-mint">Active</span>
                   </div>
-                  {/* Floating tags */}
-                  <div className="absolute top-8 left-2 px-1.5 py-0.5 rounded bg-accent-violet/10 border border-accent-violet/30 text-[7px] text-accent-violet">Tee</div>
-                  <div className="absolute bottom-8 right-2 px-1.5 py-0.5 rounded bg-accent-mint/10 border border-accent-mint/30 text-[7px] text-accent-mint">Jeans</div>
+                  <div className="w-full flex-1 flex flex-col justify-center gap-4 mb-4">
+                    {[
+                      { name: "Skin Smoothness", val: "85%" },
+                      { name: "Face Contour", val: "40%" },
+                      { name: "Body Balance", val: "60%" }
+                    ].map((s, idx) => (
+                      <div key={idx} className="w-full">
+                        <div className="flex justify-between text-[8px] text-text-secondary mb-1">
+                          <span>{s.name}</span>
+                          <span>{s.val}</span>
+                        </div>
+                        <div className="h-1 bg-white/10 rounded-full relative">
+                          <div className="absolute left-0 top-0 bottom-0 bg-accent-violet rounded-full" style={{ width: s.val }} />
+                          <div className="absolute w-2 h-2 rounded-full bg-text-primary -top-0.5" style={{ left: `calc(${s.val} - 4px)` }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="w-full h-9 rounded-xl bg-white/5 flex items-center justify-center text-[10px] text-text-secondary">Reset Adjustments</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">AI Editor (Sliders)</div>
                 </div>
-                <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Save Outfit</div>
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-                </div>
-                <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Try-On (Avatar Screen)</div>
-              </div>
 
-              {/* Social Feed */}
-              <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
-                <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
-                  <span className="text-[10px] font-mono text-text-muted">Feed</span>
-                  <div className="w-3.5 h-3.5 rounded-full bg-white/10" />
-                </div>
-                {/* Post */}
-                <div className="w-full flex-1 flex flex-col mb-4">
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <div className="w-4 h-4 rounded-full bg-white/10" />
-                    <div className="w-12 h-1.5 bg-white/10 rounded" />
+                {/* Compare (Split View) */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">Compare View</span>
+                    <div className="w-3 h-3 rounded bg-white/10" />
                   </div>
-                  <div className="flex-1 rounded-xl border border-dashed border-white/10 bg-white/[0.01] flex items-center justify-center mb-2">
-                    <div className="w-8 h-8 rounded bg-white/5" />
+                  <div className="w-full flex-1 flex items-center justify-center relative mb-4">
+                    <div className="absolute inset-0 border border-dashed border-white/20 rounded-xl overflow-hidden flex">
+                      <div className="w-1/2 bg-white/[0.02] flex items-center justify-center relative border-r border-accent-mint">
+                        <span className="absolute top-2 left-2 text-[7px] text-text-muted">Before</span>
+                        <div className="w-6 h-16 rounded bg-white/5" />
+                      </div>
+                      <div className="w-1/2 bg-accent-violet/5 flex items-center justify-center relative">
+                        <span className="absolute top-2 right-2 text-[7px] text-accent-violet">After</span>
+                        <div className="w-7 h-16 rounded bg-accent-violet/10 border border-accent-violet/30" />
+                      </div>
+                    </div>
+                    <div className="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-accent-mint flex items-center justify-center">
+                      <div className="w-4 h-4 rounded-full bg-accent-mint border border-base flex items-center justify-center text-[6px] font-bold text-base">↔</div>
+                    </div>
                   </div>
-                  <div className="flex gap-2">
-                    <div className="w-6 h-3 bg-white/10 rounded" />
-                    <div className="w-8 h-3 bg-white/5 rounded" />
+                  <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Apply Edits</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
                   </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Compare (Split View)</div>
                 </div>
-                <div className="w-full h-9 rounded-xl border border-white/5 flex items-center justify-center text-[10px] text-text-secondary">Share Outfit</div>
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-                </div>
-                <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Social Feed</div>
-              </div>
 
-              {/* Challenge Page */}
-              <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
-                <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
-                  <span className="text-[10px] font-mono text-text-muted">Styling Challenge</span>
-                  <span className="text-[8px] text-red-400 font-mono">Live</span>
-                </div>
-                {/* Banner */}
-                <div className="w-full h-10 rounded-xl bg-gradient-to-r from-accent-violet/20 to-accent-mint/20 border border-white/5 flex flex-col items-center justify-center mb-3">
-                  <div className="w-20 h-2 bg-white/20 rounded mb-1" />
-                  <div className="w-12 h-1 bg-white/10 rounded" />
-                </div>
-                {/* Submissions */}
-                <div className="w-full flex-1 grid grid-cols-2 gap-2 mb-4">
-                  <div className="rounded-lg border border-dashed border-white/10 bg-white/[0.01] flex flex-col justify-end p-1.5">
-                    <div className="w-full h-3 bg-white/10 rounded" />
+                {/* AI Presets */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">AI Presets</span>
+                    <div className="w-3.5 h-3.5 rounded-full bg-white/10" />
                   </div>
-                  <div className="rounded-lg border border-dashed border-white/10 bg-white/[0.01] flex flex-col justify-end p-1.5">
-                    <div className="w-full h-3 bg-white/10 rounded" />
+                  <div className="w-full flex-1 flex flex-col gap-2 mb-4 justify-center">
+                    {[
+                      { name: "Natural Glow", active: true },
+                      { name: "Portrait Pro", active: false },
+                      { name: "Athletic Fit", active: false },
+                      { name: "Soft Focus", active: false }
+                    ].map((p, idx) => (
+                      <div
+                        key={idx}
+                        className={`w-full py-2 px-3 rounded-lg border text-[9px] font-medium flex items-center justify-between ${
+                          p.active
+                            ? "bg-accent-violet/10 border-accent-violet text-text-primary"
+                            : "border-white/5 bg-white/[0.01] text-text-secondary"
+                        }`}
+                      >
+                        <span>{p.name}</span>
+                        {p.active && <span className="text-[8px] text-accent-violet">✓</span>}
+                      </div>
+                    ))}
                   </div>
+                  <div className="w-full h-9 rounded-xl border border-white/5 flex items-center justify-center text-[10px] text-text-secondary">Customize Preset</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">AI Presets</div>
                 </div>
-                <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Vote Now</div>
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
-                </div>
-                <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Challenge Page</div>
-              </div>
 
-            </div>
+                {/* Export & Share */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">Export</span>
+                    <span className="text-[8px] text-accent-mint">Format: PNG</span>
+                  </div>
+                  <div className="w-full flex-1 flex flex-col justify-center gap-3 mb-4">
+                    <div className="rounded-lg border border-dashed border-white/10 bg-white/[0.01] p-3 text-center">
+                      <span className="text-[20px] block mb-1">💾</span>
+                      <span className="text-[8px] text-text-muted block">File Size: ~2.4MB</span>
+                      <span className="text-[8px] text-text-muted block">Resolution: 3000 x 4000</span>
+                    </div>
+                    <div className="flex items-center justify-between text-[8px] px-1">
+                      <span className="text-text-secondary">Include Watermark</span>
+                      <div className="w-6 h-3 bg-white/10 rounded-full relative">
+                        <div className="absolute w-2 h-2 rounded-full bg-text-muted left-0.5 top-0.5" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Save to Camera Roll</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Export &amp; Share</div>
+                </div>
+
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                
+                {/* Home (AI Outfit Feed) */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">72°F Sunny</span>
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="w-full flex-1 rounded-2xl border border-dashed border-white/10 bg-white/[0.01] flex flex-col items-center justify-center p-4 relative mb-4">
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-3 text-text-muted text-xs">✨</div>
+                    <div className="w-20 h-2 bg-white/10 rounded mb-2" />
+                    <div className="w-16 h-1.5 bg-white/5 rounded" />
+                  </div>
+                  <div className="w-full space-y-2">
+                    <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Wear Today</div>
+                    <div className="w-full h-9 rounded-xl border border-white/5 flex items-center justify-center text-[10px] text-text-secondary">Try on Avatar</div>
+                  </div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Home (AI Outfit Feed)</div>
+                </div>
+
+                {/* Closet (Wardrobe Grid) */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">My Closet</span>
+                    <span className="text-[10px] text-accent-mint">+ Add</span>
+                  </div>
+                  <div className="w-full flex gap-1.5 mb-3">
+                    <div className="flex-1 h-5 rounded bg-white/10 flex items-center justify-center text-[8px] font-medium">All</div>
+                    <div className="flex-1 h-5 rounded border border-white/5 flex items-center justify-center text-[8px] text-text-muted">Tops</div>
+                    <div className="flex-1 h-5 rounded border border-white/5 flex items-center justify-center text-[8px] text-text-muted">Bottoms</div>
+                  </div>
+                  <div className="w-full flex-1 grid grid-cols-2 gap-2 mb-4">
+                    {[...Array(4)].map((_, i) => (
+                      <div key={i} className="rounded-xl border border-dashed border-white/10 bg-white/[0.01] flex items-center justify-center">
+                        <div className="w-6 h-6 rounded bg-white/5" />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="w-full h-9 rounded-xl bg-white/5 flex items-center justify-center text-[10px] text-text-secondary">Scan Wardrobe</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Closet (Wardrobe Grid)</div>
+                </div>
+
+                {/* Try-On (Avatar Screen) */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">Avatar Studio</span>
+                    <div className="w-3 h-3 rounded bg-white/10" />
+                  </div>
+                  <div className="w-full flex-1 flex items-center justify-center relative mb-4">
+                    <div className="w-14 h-32 rounded-full border border-dashed border-white/20 flex flex-col items-center justify-start pt-3">
+                      <div className="w-5 h-5 rounded-full bg-white/10 mb-2" />
+                      <div className="w-8 h-16 bg-white/5 rounded-full" />
+                    </div>
+                    <div className="absolute top-8 left-2 px-1.5 py-0.5 rounded bg-accent-violet/10 border border-accent-violet/30 text-[7px] text-accent-violet">Tee</div>
+                    <div className="absolute bottom-8 right-2 px-1.5 py-0.5 rounded bg-accent-mint/10 border border-accent-mint/30 text-[7px] text-accent-mint">Jeans</div>
+                  </div>
+                  <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Save Outfit</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Try-On (Avatar Screen)</div>
+                </div>
+
+                {/* Social Feed */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">Feed</span>
+                    <div className="w-3.5 h-3.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="w-full flex-1 flex flex-col mb-4">
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <div className="w-4 h-4 rounded-full bg-white/10" />
+                      <div className="w-12 h-1.5 bg-white/10 rounded" />
+                    </div>
+                    <div className="flex-1 rounded-xl border border-dashed border-white/10 bg-white/[0.01] flex items-center justify-center mb-2">
+                      <div className="w-8 h-8 rounded bg-white/5" />
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="w-6 h-3 bg-white/10 rounded" />
+                      <div className="w-8 h-3 bg-white/5 rounded" />
+                    </div>
+                  </div>
+                  <div className="w-full h-9 rounded-xl border border-white/5 flex items-center justify-center text-[10px] text-text-secondary">Share Outfit</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Social Feed</div>
+                </div>
+
+                {/* Challenge Page */}
+                <div className="glass rounded-3xl p-6 border border-white/5 bg-black/40 flex flex-col items-center relative overflow-hidden min-h-[420px] justify-between">
+                  <div className="w-full flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <span className="text-[10px] font-mono text-text-muted">Styling Challenge</span>
+                    <span className="text-[8px] text-red-400 font-mono">Live</span>
+                  </div>
+                  <div className="w-full h-10 rounded-xl bg-gradient-to-r from-accent-violet/20 to-accent-mint/20 border border-white/5 flex flex-col items-center justify-center mb-3">
+                    <div className="w-20 h-2 bg-white/20 rounded mb-1" />
+                    <div className="w-12 h-1 bg-white/10 rounded" />
+                  </div>
+                  <div className="w-full flex-1 grid grid-cols-2 gap-2 mb-4">
+                    <div className="rounded-lg border border-dashed border-white/10 bg-white/[0.01] flex flex-col justify-end p-1.5">
+                      <div className="w-full h-3 bg-white/10 rounded" />
+                    </div>
+                    <div className="rounded-lg border border-dashed border-white/10 bg-white/[0.01] flex flex-col justify-end p-1.5">
+                      <div className="w-full h-3 bg-white/10 rounded" />
+                    </div>
+                  </div>
+                  <div className="w-full h-9 rounded-xl bg-white/10 flex items-center justify-center text-[11px] font-medium text-text-primary">Vote Now</div>
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl border-x border-b border-white/5 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  </div>
+                  <div className="mt-4 text-xs font-caption text-text-muted font-semibold">Challenge Page</div>
+                </div>
+
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -745,7 +950,7 @@ export default async function CaseStudyPage({ params }: Props) {
               className="group relative block glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform duration-500"
             >
               <div className="absolute inset-0 opacity-30">
-                <Image src={next.thumbnail} alt={next.title} fill className="object-cover" />
+                <Image src={next.thumbnail} alt={next.title} fill className="object-cover" sizes="100vw" />
               </div>
               <div className="relative z-10 p-12 flex items-center justify-between">
                 <div>

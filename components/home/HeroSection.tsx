@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
-  const words = ["Designing", "the", "Future,", "Pixel", "by", "Pixel."];
+  const words = ["Hi", "I’m", "Anne,", "I", "turn", "complex", "digital", "products", "into", "simple,", "intuitive", "experiences."];
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const eyebrowRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLParagraphElement>(null);
@@ -10,8 +10,8 @@ export default function HeroSection() {
   const scrollCueRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const timings = [200, 500, 900, 1100, 1300];
-    const delays = [0, 100, 200, 300, 400, 500];
+    const timings = [200, 500, 1200, 1400, 1600];
+    const delays = Array.from({ length: words.length }, (_, i) => i * 50);
 
     // Eyebrow
     setTimeout(() => {
@@ -59,7 +59,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-28 pb-12 overflow-hidden"
       aria-label="Hero section"
     >
       {/* Background: dot grid */}
@@ -112,13 +112,13 @@ export default function HeroSection() {
           style={{ opacity: 0, transform: "translateY(12px)", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)" }}
         >
           <span className="text-accent-violet">⬡</span>
-          <span>UI/UX Engineer</span>
-          <span className="text-text-muted">×</span>
-          <span>AI Engineer</span>
+          <span>UI/UX Designer</span>
+          <span className="text-text-muted">|</span>
+          <span>AI-augmented Product Design</span>
         </div>
 
         {/* Heading */}
-        <h1 className="font-display text-5xl sm:text-6xl lg:text-display-xl font-bold leading-tight tracking-tight mb-6">
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-display-l font-bold leading-tight tracking-tight mb-6 max-w-4xl mx-auto">
           {words.map((word, i) => (
             <span
               key={i}
@@ -131,7 +131,7 @@ export default function HeroSection() {
                 transition: "all 0.5s cubic-bezier(0.16,1,0.3,1)",
               }}
             >
-              {word === "Pixel." ? (
+              {word === "experiences." ? (
                 <span className="gradient-text-violet-mint">{word}</span>
               ) : (
                 word
@@ -146,8 +146,7 @@ export default function HeroSection() {
           className="text-body-l text-text-secondary max-w-xl mx-auto mb-10 leading-relaxed"
           style={{ opacity: 0, transform: "translateY(16px)", transition: "all 0.5s cubic-bezier(0.16,1,0.3,1)" }}
         >
-          Anne Okolo crafts digital experiences where intuitive design meets machine intelligence —
-          turning complexity into clarity.
+          I believe great design happens when users don’t have to think too hard to get things done.
         </p>
 
         {/* CTAs */}

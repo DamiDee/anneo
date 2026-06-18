@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Download, Send } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Anne Okolo — UI/UX & AI Engineer",
+  title: "About Anne Okolo — UI/UX Designer & AI-augmented Product Design",
   description:
-    "Anne Okolo is a UI/UX Engineer and AI specialist based in Lagos, Nigeria. She bridges beautiful interfaces and intelligent systems.",
+    "Anne Okolo is a UI/UX Designer specializing in AI-augmented product design. She turns complex digital products into simple, intuitive experiences.",
 };
 
 const designSkills = [
@@ -18,27 +17,27 @@ const designSkills = [
 ];
 
 const engineeringSkills = [
-  { name: "React / Next.js", level: 82, label: "Advanced" },
-  { name: "TypeScript", level: 80, label: "Advanced" },
-  { name: "Python", level: 88, label: "Advanced" },
-  { name: "OpenAI API", level: 96, label: "Expert" },
-  { name: "LangChain / RAG", level: 86, label: "Advanced" },
+  { name: "Claude / LLM Prompting", level: 95, label: "Expert" },
+  { name: "Google Stitch Automation", level: 90, label: "Advanced" },
+  { name: "MoodAI Styling Workflows", level: 92, label: "Expert" },
+  { name: "Generative UI Layouts", level: 88, label: "Advanced" },
+  { name: "AI Persona Simulation", level: 85, label: "Advanced" },
 ];
 
 const tools = [
-  "Figma", "Framer", "Notion", "VS Code", "GitHub", "Postman", "Vercel",
+  "Figma", "Framer", "Notion", "VS Code", "GitHub", "Vercel",
   "Slack", "Jira", "Linear", "Loom", "Miro", "FigJam", "Maze",
-  "Amplitude", "Mixpanel", "Pinecone", "LangChain", "Weights & Biases",
+  "Amplitude", "Mixpanel", "MoodAI", "Google Stitch", "Claude"
 ];
 
 const experience = [
   {
     period: "2024 — Present",
-    role: "Lead UX Designer + AI Engineer",
+    role: "UI/UX Designer (AI-Augmented)",
     company: "Freelance / Consulting",
     description:
-      "Leading end-to-end design and AI engineering for startups across HealthTech, FinTech, and Productivity. From concept to shipped product — research, design systems, and LLM integrations.",
-    tags: ["AI Engineering", "Design Systems", "B2B", "Consulting"],
+      "Leading end-to-end product design for startups across HealthTech, FinTech, and Lifestyle. Integrating AI tools like Google Stitch, MoodAI, and Claude to accelerate ideation, wireframing, and design workflows.",
+    tags: ["AI-Augmented Design", "Design Systems", "Product Strategy"],
     accentColor: "#7C6AF7",
   },
   {
@@ -47,7 +46,7 @@ const experience = [
     company: "Tech Startup — Lagos",
     description:
       "Owned product design for a Series A startup, establishing their design system, reducing onboarding time by 38%, and collaborating weekly with engineering and product leadership.",
-    tags: ["Product Design", "Design Systems", "Figma", "Agile"],
+    tags: ["Product Design", "Design Systems", "Figma", "Framer"],
     accentColor: "#3DFFE0",
   },
   {
@@ -102,20 +101,18 @@ export default function AboutPage() {
               Anne Okolo
             </p>
             <h1 className="font-display text-h1 sm:text-display-l font-semibold text-text-primary mb-6 leading-tight">
-              I design for humans,<br />
-              <span className="gradient-text-violet-mint">I build for machines.</span>
+              Hi, I’m Anne,<br />
+              <span className="gradient-text-violet-mint">UI/UX Designer.</span>
             </h1>
             <p className="text-body-l text-text-secondary leading-relaxed mb-8 max-w-xl">
-              Anne is a UI/UX Engineer and AI specialist based in Lagos, Nigeria. She bridges 
-              the gap between beautiful interfaces and intelligent systems — creating products 
-              that feel as smart as they look.
+              I turn complex digital products into simple, intuitive experiences. Specializing in AI-augmented product design, I combine empathy, research, and machine intelligence to make technology feel natural and useful.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="flex items-center gap-2 px-4 py-2.5 glass rounded-full font-caption text-sm text-text-secondary">
-                🎨 Open to UX roles
+                🎨 Open to UI/UX Design Roles
               </span>
               <span className="flex items-center gap-2 px-4 py-2.5 glass rounded-full font-caption text-sm text-text-secondary">
-                🤖 Available for AI consulting
+                ✨ AI-Augmented Workflow Consulting
               </span>
             </div>
           </div>
@@ -131,8 +128,8 @@ export default function AboutPage() {
               {/* Photo */}
               <div className="relative w-72 h-80 rounded-3xl overflow-hidden border border-white/10">
                 <Image
-                  src="/images/anne-photo.png"
-                  alt="Anne Okolo — UI/UX & AI Engineer"
+                  src="/images/anne.jpeg"
+                  alt="Anne Okolo — UI/UX Designer"
                   fill
                   className="object-cover object-top"
                   priority
@@ -164,29 +161,22 @@ export default function AboutPage() {
           </p>
           <div className="space-y-8 text-body text-text-secondary leading-relaxed">
             <p>
-              My obsession with design started with a broken experience — a hospital app so confusing, my aunt couldn&apos;t 
-              book an appointment without help. I was 18, studying Computer Science, and I couldn&apos;t stop thinking: 
-              what if the interface had been built for <em className="text-text-primary not-italic">her</em>, not just for the engineers who built it?
-            </p>
-
-            {/* Pull quote */}
-            <blockquote className="border-l-2 border-accent-violet pl-6 py-2 my-10">
-              <p className="font-display text-h2 font-semibold text-text-primary leading-snug">
-                &ldquo;Design without intelligence is decoration.
-                Intelligence without design is invisible.&rdquo;
-              </p>
-            </blockquote>
-
-            <p>
-              The intersection found me when I started building AI tools and realized the critical gap: 
-              models could be brilliant, but if the experience felt robotic, users abandoned them. 
-              I became obsessed with the handshake between model capabilities and human cognition — 
-              the exact point where technology stops feeling like technology.
+              Hi, I’m Anne.
             </p>
             <p>
-              Today, I work across the full stack of product creation: from the first research session to 
-              the last production deploy. I&apos;m building AI-native products that feel inevitable — 
-              and I&apos;m just getting started.
+              I started my journey in UI/UX design with a simple belief: technology should make everyday life easier for everyday people.
+            </p>
+            <p>
+              I was drawn to design after noticing how many digital products are harder to use than they should be, not because people lack ability, but because the experiences aren’t built with real users in mind. I want to change that by creating simple, intuitive solutions that anyone can understand and use with confidence.
+            </p>
+            <p>
+              For me, great design is rooted in empathy. It’s about understanding people’s challenges and translating them into clear, thoughtful experiences that solve real problems and reduce friction.
+            </p>
+            <p>
+              Over time, I’ve learned that the best products don’t just look good, they think well. They combine research, strategy, and technology to feel natural, useful, and human. That’s the kind of work I aim to create.
+            </p>
+            <p>
+              When I’m not designing, you’ll probably find me down a YouTube rabbit hole watching videos about design trends, AI tools, product strategy, and why one tiny button can make or break an entire experience. One video always turns into twenty.
             </p>
           </div>
         </div>
@@ -207,7 +197,7 @@ export default function AboutPage() {
               ))}
             </div>
             <div>
-              <h3 className="font-display text-h3 font-semibold text-accent-mint mb-6">Engineering</h3>
+              <h3 className="font-display text-h3 font-semibold text-accent-mint mb-6">AI Workflows</h3>
               {engineeringSkills.map((s) => (
                 <SkillBar key={s.name} {...s} color="#3DFFE0" />
               ))}
@@ -287,9 +277,9 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              { emoji: "🌍", title: "Based in Lagos, Nigeria", sub: "Shipping globally" },
-              { emoji: "📚", title: "Currently Reading", sub: "The Design of Everyday Things — Donald Norman" },
-              { emoji: "✈️", title: "Passionate About", sub: "Afrofuturism · Building for Africa · Salsa dancing" },
+              { emoji: "🌍", title: "Abuja-based", sub: "Shipping globally" },
+              { emoji: "📚", title: "Currently Reading", sub: "Today Matters — John C. Maxwell" },
+              { emoji: "✈️", title: "Passionate About", sub: "Traveling, Learning" },
             ].map((item) => (
               <div key={item.title} className="glass rounded-2xl p-7">
                 <span className="text-3xl mb-4 block">{item.emoji}</span>
@@ -318,7 +308,7 @@ export default function AboutPage() {
               Download Résumé
             </a>
             <a
-              href="mailto:hello@anneokolo.com"
+              href="mailto:anneookolo@gmail.com"
               className="flex items-center gap-2.5 px-8 py-4 rounded-full font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-coral"
               style={{ background: "linear-gradient(135deg, #FF6B6B, #F5C97A)" }}
             >
