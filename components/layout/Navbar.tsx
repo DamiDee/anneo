@@ -69,14 +69,14 @@ export default function Navbar() {
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-4">
-            <Link
-              href="/#contact"
+            <a
+              href="mailto:anneookolo@gmail.com"
               className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium font-caption text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-coral"
               style={{ background: "linear-gradient(135deg, #FF6B6B, #F5C97A)" }}
               data-cursor-hover
             >
               Let&apos;s Talk <span aria-hidden>→</span>
-            </Link>
+            </a>
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -127,14 +127,14 @@ export default function Navbar() {
             transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease",
           }}
         >
-          <Link
-            href="/#contact"
+          <a
+            href="mailto:anneookolo@gmail.com"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-lg font-medium text-white"
             style={{ background: "linear-gradient(135deg, #FF6B6B, #F5C97A)" }}
             onClick={() => setMenuOpen(false)}
           >
             Let&apos;s Talk →
-          </Link>
+          </a>
         </div>
       </div>
     </>

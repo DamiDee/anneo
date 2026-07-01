@@ -60,7 +60,7 @@ const experience = [
     accentColor: "#FF6B6B",
   },
   {
-    period: "February 2025 — April 2025",
+    period: "Feb 2025 — September 2026",
     role: "UI Designer",
     company: "Miva Open University",
     points: [
