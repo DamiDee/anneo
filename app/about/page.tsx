@@ -32,40 +32,88 @@ const tools = [
 
 const experience = [
   {
-    period: "2024 — Present",
-    role: "UI/UX Designer (AI-Augmented)",
-    company: "Freelance / Consulting",
-    description:
-      "Leading end-to-end product design for startups across HealthTech, FinTech, and Lifestyle. Integrating AI tools like Google Stitch, MoodAI, and Claude to accelerate ideation, wireframing, and design workflows.",
-    tags: ["AI-Augmented Design", "Design Systems", "Product Strategy"],
+    period: "March 2025 — April 2025",
+    role: "UI/UX Designer",
+    company: "Society for Family Health (Epharma4FP)",
+    points: [
+      "Led the end-to-end redesign of a mobile health app and landing page, increasing navigation efficiency by 45% and reducing bounce rate",
+      "Delivered detailed UX audit reports that guided key strategic improvements and informed future design decisions",
+      "Created interactive Figma prototypes, cutting developer rework by 30% and accelerating handoff",
+      "Completed all deliverables ahead of schedule in a fully remote setup, demonstrating strong time management and communication skills."
+    ],
+    tags: ["Redesign", "UX Audit", "Figma Prototypes", "Remote Work"],
     accentColor: "#7C6AF7",
   },
   {
-    period: "2022 — 2024",
-    role: "Senior Product Designer",
-    company: "Tech Startup — Lagos",
-    description:
-      "Owned product design for a Series A startup, establishing their design system, reducing onboarding time by 38%, and collaborating weekly with engineering and product leadership.",
-    tags: ["Product Design", "Design Systems", "Figma", "Framer"],
+    period: "February 2025 — April 2025",
+    role: "UI Designer",
+    company: "MIVA University (EdTech)",
+    points: [
+      "Rebuilt LMS UI, resulting in a 30% increase in student course completion rates through simplified user flows",
+      "Developed scalable design systems used in 50+ digital assets, reducing design inconsistencies by 90%",
+      "Partnered with educators and QA teams to cut revision rounds by 40%, accelerating content deployment",
+      "Applied user-centered design principles to enhance learner engagement and retention"
+    ],
+    tags: ["EdTech", "LMS UI", "Design Systems", "User Flows"],
     accentColor: "#3DFFE0",
   },
   {
-    period: "2020 — 2022",
-    role: "UX Designer",
-    company: "Digital Agency",
-    description:
-      "Delivered UX for 12+ client projects across e-commerce, fintech, and healthcare. Led user research programs and created accessible, component-based design systems.",
-    tags: ["UX Research", "Accessibility", "Mobile", "Web"],
+    period: "July 2024 — August 2024",
+    role: "UI/UX Designer",
+    company: "Handyman Nigeria (Service Marketplace)",
+    points: [
+      "Conducted usability testing and reorganized content architecture, reducing user drop-off by 35%",
+      "Designed intuitive, mobile-first interfaces that improved user satisfaction."
+    ],
+    tags: ["Marketplace", "Usability Testing", "Content Architecture", "Mobile-First"],
     accentColor: "#FF6B6B",
   },
   {
-    period: "2019 — 2020",
-    role: "Junior Designer",
-    company: "Creative Studio",
-    description:
-      "Cut my teeth on visual design, branding, and my first mobile app project. Discovered that the most powerful design decisions come from listening, not assuming.",
-    tags: ["Visual Design", "Branding", "Mobile"],
+    period: "January 2024 — October 2024",
+    role: "Product Designer",
+    company: "Wigwe University Nigeria",
+    points: [
+      "Created brand-compliant digital and print designs used in 6+ major campaigns, contributing to a 60% rise in admissions inquiries",
+      "Designed engaging handbooks and social media content, streamlining internal communication and boosting outreach",
+      "Led visual design across platforms, maintaining consistent branding across all materials."
+    ],
+    tags: ["Brand Strategy", "Visual Design", "Campaign Design", "Print & Digital"],
     accentColor: "#F5C97A",
+  },
+  {
+    period: "April 2024 — June 2024",
+    role: "UI/UX Designer",
+    company: "FundusAI (Healthcare/AI)",
+    points: [
+      "Designed AI-powered healthcare interfaces, reducing diagnostic task time by 25% and improving patient flow clarity",
+      "Conducted end-to-end UX research (interviews, usability tests), leading to 3 major feature pivots based on real feedback",
+      "Ensured HIPAA compliance and WCAG 2.1 accessibility across mobile and web platforms",
+      "Increased patient engagement by 38% through responsive design and personalized user journeys."
+    ],
+    tags: ["Healthcare AI", "UX Research", "HIPAA Compliance", "WCAG 2.1"],
+    accentColor: "#7C6AF7",
+  },
+  {
+    period: "January 2023 — April 2024",
+    role: "UX Designer",
+    company: "Ubloom (Ecommerce)",
+    points: [
+      "Conducted user research and usability testing to uncover key pain points and inform data-driven design decisions",
+      "Designed intuitive, visually engaging interfaces that enhanced user satisfaction and streamlined interactions across platforms."
+    ],
+    tags: ["Ecommerce", "Usability Testing", "User Research", "Interaction Design"],
+    accentColor: "#3DFFE0",
+  },
+  {
+    period: "October 2022",
+    role: "UX Designer",
+    company: "Leesha",
+    points: [
+      "Led user research and usability testing, improving user satisfaction by 30% and reducing drop-off by 25%",
+      "Spearheaded end-to-end design, increasing conversion rates."
+    ],
+    tags: ["User Research", "Usability Testing", "Conversion Optimization"],
+    accentColor: "#FF6B6B",
   },
 ];
 
@@ -250,7 +298,22 @@ export default function AboutPage() {
                     {exp.role}
                   </h3>
                   <p className="font-caption text-sm text-text-secondary mb-3">{exp.company}</p>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-4">{exp.description}</p>
+                  {exp.points && (
+                    <ul className="space-y-3 mb-5 list-none">
+                      {exp.points.map((point, idx) => (
+                        <li key={idx} className="text-sm text-text-secondary leading-relaxed flex items-start gap-2.5">
+                          <span
+                            className="mt-2 w-1.5 h-1.5 rounded-full shrink-0 animate-pulse-glow"
+                            style={{
+                              backgroundColor: exp.accentColor,
+                              boxShadow: `0 0 6px ${exp.accentColor}aa`,
+                            }}
+                          />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {exp.tags.map((tag) => (
                       <span
