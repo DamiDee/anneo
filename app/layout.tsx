@@ -5,30 +5,30 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/layout/CustomCursor";
 
 export const metadata: Metadata = {
-  title: "Anne Okolo — UI/UX Designer & AI-augmented Product Design",
+  title: "Anne Ojochei — UI/UX Designer & AI-augmented Product Design",
   description:
-    "Anne Okolo crafts digital experiences where intuitive design meets machine intelligence — turning complexity into clarity.",
+    "Anne Ojochei crafts digital experiences where intuitive design meets machine intelligence — turning complexity into clarity.",
   keywords: ["UI/UX Designer", "AI-augmented Product Design", "Product Designer", "UX Design", "Lagos", "Nigeria"],
-  authors: [{ name: "Anne Okolo" }],
+  authors: [{ name: "Anne Ojochei" }],
   openGraph: {
-    title: "Anne Okolo — UI/UX Designer & AI-augmented Product Design",
+    title: "Anne Ojochei — UI/UX Designer & AI-augmented Product Design",
     description:
-      "Designing the future, pixel by pixel. Anne Okolo bridges intuitive design and machine intelligence.",
+      "Designing the future, pixel by pixel. Anne Ojochei bridges intuitive design and machine intelligence.",
     url: "https://anneokolo.com",
-    siteName: "Anne Okolo Portfolio",
+    siteName: "Anne Ojochei Portfolio",
     type: "website",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Anne Okolo Portfolio",
+        alt: "Anne Ojochei Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anne Okolo — UI/UX Designer & AI-augmented Product Design",
+    title: "Anne Ojochei — UI/UX Designer & AI-augmented Product Design",
     description: "Designing the future, pixel by pixel.",
     images: ["/images/og-image.png"],
   },
@@ -59,7 +59,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Anne Okolo",
+              name: "Anne Ojochei",
               jobTitle: "UI/UX Designer & AI-augmented Product Design",
               url: "https://anneokolo.com",
               sameAs: [

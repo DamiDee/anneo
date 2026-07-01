@@ -130,7 +130,7 @@ function ProjectCard({
       {project.featured && (
         <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-caption font-semibold text-base glass-strong"
           style={{ background: `${project.accentColor}22`, borderColor: `${project.accentColor}44` }}>
-          ★ Featured AI Project
+          ★ Featured Project
         </div>
       )}
     </Link>
@@ -138,7 +138,7 @@ function ProjectCard({
 }
 
 export default function WorksSection() {
-  const [p0, p1, p2, p3, p4, p5] = projects;
+  const [p0, p1, p2, p3, p4] = projects;
 
   return (
     <section id="work" className="py-24 px-6 max-w-7xl mx-auto" aria-label="Selected works">
@@ -175,11 +175,8 @@ export default function WorksSection() {
         </div>
 
         {/* Row 3 */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-3">
           <ProjectCard project={p4} wide />
-        </div>
-        <div className="md:col-span-1">
-          <ProjectCard project={p5} />
         </div>
       </div>
     </section>

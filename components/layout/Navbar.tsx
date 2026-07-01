@@ -5,9 +5,8 @@ import { usePathname } from "next/navigation";
 import { X, Menu } from "lucide-react";
 
 const navLinks = [
-  { href: "/#work", label: "Work" },
+  { href: "/#work", label: "Projects" },
   { href: "/about", label: "About" },
-  { href: "/#ai-projects", label: "AI Projects" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -45,7 +44,7 @@ export default function Navbar() {
           <Link
             href="/"
             className="font-display text-xl font-bold tracking-tight text-text-primary relative group"
-            aria-label="Anne Okolo — Home"
+            aria-label="Anne Ojochei — Home"
           >
             <span className="gradient-text-violet-mint">AO</span>
             <span

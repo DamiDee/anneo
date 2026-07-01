@@ -3,7 +3,7 @@ import { Mail, Palette } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#work", label: "Work" },
+  { href: "/#work", label: "Projects" },
   { href: "/about", label: "About" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -105,7 +105,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-text-muted text-sm font-caption">
-            © {new Date().getFullYear()} Anne Okolo · Designed &amp; Engineered by Anne
+            © {new Date().getFullYear()} Anne Ojochei · Designed &amp; Engineered by Anne
           </p>
         </div>
       </div>

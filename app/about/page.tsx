@@ -3,9 +3,9 @@ import Image from "next/image";
 import { Download, Send } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Anne Okolo — UI/UX Designer & AI-augmented Product Design",
+  title: "About Anne Ojochei — UI/UX Designer & AI-augmented Product Design",
   description:
-    "Anne Okolo is a UI/UX Designer specializing in AI-augmented product design. She turns complex digital products into simple, intuitive experiences.",
+    "Anne Ojochei is a UI/UX Designer specializing in AI-augmented product design. She turns complex digital products into simple, intuitive experiences.",
 };
 
 const designSkills = [
@@ -32,6 +32,21 @@ const tools = [
 
 const experience = [
   {
+    period: "November 2025 – Present",
+    role: "UX Engineer",
+    company: "Barek Technologies",
+    points: [
+      "Design intuitive web and mobile user experiences from concept to high-fidelity prototypes.",
+      "Collaborate with product managers, developers, and stakeholders to deliver user-centered digital products.",
+      "Use AI-assisted (vibe coding) workflows to rapidly prototype, build, and refine user interfaces.",
+      "Bridge design and development by translating designs into functional, responsive interfaces.",
+      "Conduct usability testing and iterate designs based on user feedback and product goals.",
+      "Maintain design systems and ensure consistency across digital products."
+    ],
+    tags: ["UX Engineering", "Vibe Coding", "Rapid Prototyping", "Design Systems"],
+    accentColor: "#7C6AF7",
+  },
+  {
     period: "March 2025 — April 2025",
     role: "UI/UX Designer",
     company: "Society for Family Health (Epharma4FP)",
@@ -42,14 +57,13 @@ const experience = [
       "Completed all deliverables ahead of schedule in a fully remote setup, demonstrating strong time management and communication skills."
     ],
     tags: ["Redesign", "UX Audit", "Figma Prototypes", "Remote Work"],
-    accentColor: "#7C6AF7",
+    accentColor: "#FF6B6B",
   },
   {
     period: "February 2025 — April 2025",
     role: "UI Designer",
-    company: "MIVA University (EdTech)",
+    company: "Miva Open University",
     points: [
-      "Rebuilt LMS UI, resulting in a 30% increase in student course completion rates through simplified user flows",
       "Developed scalable design systems used in 50+ digital assets, reducing design inconsistencies by 90%",
       "Partnered with educators and QA teams to cut revision rounds by 40%, accelerating content deployment",
       "Applied user-centered design principles to enhance learner engagement and retention"
@@ -146,7 +160,7 @@ export default function AboutPage() {
           {/* Left — 3/5 */}
           <div className="md:col-span-3">
             <p className="font-caption text-caption text-accent-violet uppercase tracking-widest mb-5">
-              Anne Okolo
+              Anne Ojochei
             </p>
             <h1 className="font-display text-h1 sm:text-display-l font-semibold text-text-primary mb-6 leading-tight">
               Hi, I’m Anne,<br />
@@ -177,7 +191,7 @@ export default function AboutPage() {
               <div className="relative w-72 h-80 rounded-3xl overflow-hidden border border-white/10">
                 <Image
                   src="/images/anne.jpeg"
-                  alt="Anne Okolo — UI/UX Designer"
+                  alt="Anne Ojochei — UI/UX Designer"
                   fill
                   className="object-cover object-top"
                   priority
@@ -212,19 +226,19 @@ export default function AboutPage() {
               Hi, I’m Anne.
             </p>
             <p>
-              I started my journey in UI/UX design with a simple belief: technology should make everyday life easier for everyday people.
+              I began my journey in UI/UX design with a simple belief: technology should make everyday life easier for everyday people.
             </p>
             <p>
-              I was drawn to design after noticing how many digital products are harder to use than they should be, not because people lack ability, but because the experiences aren’t built with real users in mind. I want to change that by creating simple, intuitive solutions that anyone can understand and use with confidence.
+              I was drawn to design after noticing how many digital products are more complicated than they need to be because they aren’t built with real users in mind. My goal is to change that by creating simple, intuitive experiences that people can navigate with confidence.
             </p>
             <p>
-              For me, great design is rooted in empathy. It’s about understanding people’s challenges and translating them into clear, thoughtful experiences that solve real problems and reduce friction.
+              For me, great design starts with empathy. It’s about understanding people’s challenges and transforming them into thoughtful, user-centered solutions that solve real problems and reduce friction.
             </p>
             <p>
-              Over time, I’ve learned that the best products don’t just look good, they think well. They combine research, strategy, and technology to feel natural, useful, and human. That’s the kind of work I aim to create.
+              Over time, I’ve learned that the best products are built with intention. They combine research, strategy, and technology to create experiences that feel natural, useful, and genuinely human. That’s the kind of work I strive to create.
             </p>
             <p>
-              When I’m not designing, you’ll probably find me down a YouTube rabbit hole watching videos about design trends, AI tools, product strategy, and why one tiny button can make or break an entire experience. One video always turns into twenty.
+              When I’m not designing, you’ll probably find me down a YouTube rabbit hole exploring design trends, AI tools, and product strategy—one video somehow always turns into twenty. I also enjoy journaling, a habit that helps me reflect, organize my thoughts, and stay curious.
             </p>
           </div>
         </div>
