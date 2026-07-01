@@ -105,10 +105,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-text-muted text-sm font-caption">
-            © 2024 Anne Okolo · Designed &amp; Engineered by Anne
-          </p>
-          <p className="text-text-muted text-sm font-mono">
-            Built with Next.js + Framer Motion
+            © {new Date().getFullYear()} Anne Okolo · Designed &amp; Engineered by Anne
           </p>
         </div>
       </div>
